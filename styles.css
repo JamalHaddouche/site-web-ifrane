@@ -1,0 +1,215 @@
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --text:#0f172a;
+  --muted:#475569;
+  --card:#ffffff;
+  --alt:#f1f5f9;
+  --brand:#166534;
+  --border:#e2e8f0;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  line-height:1.6;
+  color:var(--text);
+  background:#fff;
+}
+.container{max-width:1100px;margin:0 auto;padding:0 16px}
+
+/* Header */
+.site-header{
+  position:sticky;top:0;z-index:10;
+  background:rgba(255,255,255,.92);
+  border-bottom:1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+.header-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 0;
+}
+.brand{font-weight:900;color:var(--brand);text-decoration:none}
+.nav{display:flex;gap:12px;flex-wrap:wrap}
+.nav a{
+  color:var(--muted);
+  text-decoration:none;
+  font-weight:700;
+  padding:8px 10px;
+  border-radius:10px;
+}
+.nav a:hover{background:var(--alt);color:var(--text)}
+
+/* Hero background image (Wikimedia Commons) */
+.hero{
+  color:white;
+  padding:70px 0;
+  background-image:
+    linear-gradient(120deg, rgba(2,6,23,.65), rgba(22,101,52,.35)),
+    url("https://commons.wikimedia.org/wiki/Special:FilePath/Cedar%20forest%20in%20Michlifen,%20Ifrane%20province,%20Middle%20Atlas,%20Morocco.jpg");
+  background-size:cover;
+  background-position:center;
+}
+.hero-inner{max-width:860px}
+.hero h1{font-size:clamp(28px,4vw,46px);line-height:1.12;margin-bottom:12px}
+.hero p{opacity:.95;margin-bottom:16px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+
+/* Buttons */
+.btn{
+  display:inline-block;
+  background:#fff;
+  color:#0b1220;
+  text-decoration:none;
+  font-weight:900;
+  padding:10px 14px;
+  border-radius:12px;
+  border:0;
+  cursor:pointer;
+}
+.btn:hover{transform: translateY(-1px)}
+.btn-ghost{background:transparent;color:white;border:1px solid rgba(255,255,255,.65)}
+
+/* Sections */
+.section{padding:46px 0}
+.section-alt{background:var(--alt)}
+h2{font-size:28px;margin-bottom:10px}
+.lead{color:var(--muted);margin-bottom:18px}
+
+/* Cards */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+}
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 10px 24px rgba(2,6,23,.07);
+}
+.card-media{
+  height:160px;
+  background-size:cover;
+  background-position:center;
+  filter:saturate(1.05) contrast(1.05);
+}
+.card-body{padding:14px 16px 16px}
+.card h3{margin-bottom:6px;font-size:18px}
+.card p{color:var(--muted)}
+
+/* Card images (URLs Wikimedia / Wikipedia) */
+.card--cedres .card-media{
+  background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/Cedar%20forest%20in%20Michlifen,%20Ifrane%20province,%20Middle%20Atlas,%20Morocco.jpg");
+}
+.card--macaque .card-media{
+  background-image:url("https://en.wikipedia.org/wiki/Special:FilePath/Monkey_in_azrou.jpg");
+}
+.card--lac .card-media{
+  background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/Middle%20atlas%20forest.jpg");
+}
+.card--ifran .card-media{
+  background-image:
+    linear-gradient(135deg, rgba(2,6,23,.55), rgba(22,101,52,.35)),
+    url("https://commons.wikimedia.org/wiki/Special:FilePath/Ifrane.jpg");
+  background-size:cover;
+  background-position:center;
+}
+
+/* Fallback “illustrations” (sans images externes) */
+.card--artisanat .card-media{
+  background-image:
+    linear-gradient(135deg, rgba(22,101,52,.9), rgba(14,165,233,.75)),
+    repeating-linear-gradient(45deg, rgba(255,255,255,.22) 0 8px, rgba(255,255,255,0) 8px 16px);
+}
+.card--geo .card-media{
+  background-image:
+    linear-gradient(135deg, rgba(15,23,42,.95), rgba(100,116,139,.65)),
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,.22), transparent 45%),
+    radial-gradient(circle at 70% 60%, rgba(255,255,255,.14), transparent 50%);
+}
+.card--park .card-media{
+  background-image:
+    linear-gradient(120deg, rgba(2,6,23,.55), rgba(22,101,52,.25)),
+    url("https://commons.wikimedia.org/wiki/Special:FilePath/Atlas%20Cedar%20Forest%20Ifrane%20Morocco%20-%20panoramio.jpg");
+  background-size:cover;
+  background-position:center;
+}
+.card--azrou .card-media{
+  background-image:
+    linear-gradient(120deg, rgba(2,6,23,.55), rgba(2,132,199,.25)),
+    url("https://commons.wikimedia.org/wiki/Special:FilePath/Middle%20atlas%20forest.jpg");
+  background-size:cover;
+  background-position:center;
+}
+.card--trail .card-media{
+  background-image:
+    linear-gradient(135deg, rgba(22,101,52,.85), rgba(2,132,199,.65)),
+    radial-gradient(circle at 35% 35%, rgba(255,255,255,.20), transparent 48%);
+}
+
+/* Footer + contact form */
+.site-footer{
+  background:#0b1220;
+  color:#e2e8f0;
+  padding:34px 0 18px;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:18px;
+  align-items:start;
+}
+.site-footer h3{
+  margin:0 0 10px;
+  font-size:18px;
+  color:#ffffff;
+}
+.small{font-size:13px;opacity:.92}
+.footer-list{list-style:none;margin-top:10px}
+.footer-list li{margin:8px 0;color:#cbd5e1}
+
+.contact-form{
+  display:grid;
+  gap:10px;
+  margin-top:6px;
+}
+.contact-form label{
+  font-weight:800;
+  color:#e2e8f0;
+  font-size:14px;
+}
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid rgba(226,232,240,.22);
+  background: rgba(255,255,255,.06);
+  color:#e2e8f0;
+  outline:none;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+  color: rgba(226,232,240,.65);
+}
+.contact-form input:focus,
+.contact-form textarea:focus{
+  border-color: rgba(34,197,94,.75);
+  box-shadow: 0 0 0 4px rgba(34,197,94,.18);
+}
+.btn-footer{justify-self:start;margin-top:4px}
+
+.footer-note{margin-top:10px;color:#cbd5e1}
+.footer-bottom{
+  border-top:1px solid rgba(226,232,240,.12);
+  margin-top:18px;
+  padding-top:12px;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .cards{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+}
